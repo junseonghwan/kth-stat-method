@@ -10,3 +10,4 @@ def generator(seed, hp, nobs):
 def inference(seed, y, hp):
 	# return samples of the latent variables
 	pass
+
