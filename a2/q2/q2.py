@@ -47,7 +47,9 @@ def main():
 	p = 0.1
 	G_truth, s_truth, o = generate_data(seed, T, n_lattice, p)
 	print(o)
-	print(s_truth)
+	print(G_truth)
+	print("state:")
+	print(s_truth[0:6])
 
 	# discard G and s 
 	# infer s[0] and switch states given o
