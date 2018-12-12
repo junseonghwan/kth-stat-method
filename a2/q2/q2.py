@@ -1,4 +1,4 @@
-from q1generator import *
+from q2generator import *
 import numpy as np
 import pdb
 
@@ -46,18 +46,15 @@ def main():
 	T = 100
 	p = 0.1
 	G_truth, s_truth, o = generate_data(seed, T, n_lattice, p)
-	print(s_truth[0].row, s_truth[0].col)
-	print(G_truth[0][0])
+	print(o)
+	print(s_truth)
 
 	# discard G and s 
 	# infer s[0] and switch states given o
 	num_iter = 1000
 	s, X = mh_w_gibbs(o, n_lattice, num_iter)
-	print(s[0])
 	s, X = gibbs(o, n_lattice, num_iter)
-	print(s[0])
 	s, X = block_gibbs(o, n_lattice, num_iter)
-	print(s[0])
 	
 	# YOUR CODE:
 	# analyze s, X by comparinson to the ground truth in s[0] and G

@@ -18,9 +18,9 @@ def generator(seed, N, M, K, W, alpha_bg, alpha_mw):
 
     return D, R_truth, theta_bg, theta_mw
 
-def gibbs(D, alpha_bg, alpha_mw, num_iter):
+def gibbs(D, alpha_bg, alpha_mw, num_iter, W):
     # Gibbs sampler. 
-    # Input: D: numpy array with shape (N,M),  alpha_bg: numpy array with shape(K), alpha_mw: numpy array with shape(K), num_iter: int
+    # Input: D: numpy array with shape (N,M),  alpha_bg: numpy array with shape(K), alpha_mw: numpy array with shape(K), num_iter: int, W: int
     # Output: R: numpy array with shape(num_iter, N)
     
     N = D.shape[0]
@@ -58,7 +58,7 @@ def main():
     print(R_truth)
 
     # Use D, alpha_bg and alpha_mw to infer the start positions of magic words. 
-    R = gibbs(D, alpha_bg, alpha_mw, num_iter)
+    R = gibbs(D, alpha_bg, alpha_mw, num_iter, W)
     print("\nStart positions (sampled): ")
     print(R[0,:])
     print(R[1,:])
