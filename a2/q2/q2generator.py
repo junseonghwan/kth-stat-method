@@ -124,4 +124,4 @@ def generate_data(seed, n_lattice, length, error_prob):
 	s0 = G.get_node(r, c)
 	X = sample_switch_states(n_lattice)
 	positions, observations = simulate(s0, X, G, length, error_prob)
-	return X, positions, observations
+	return G, X, positions, observations
