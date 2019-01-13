@@ -2,7 +2,7 @@ from q2generator import *
 import numpy as np
 import pdb
 
-def conditional_likelihood(o, G, start):
+def conditional_likelihood(o, G, x, start):
 	pass
 
 # o: observations
@@ -12,7 +12,7 @@ def mh_w_gibbs(o, G, num_iter, error_prob=0.1):
 	s = [] # store samples for the start positions
 	X = [] # store switch states
 	X.append(sample_switch_states(G.lattice_size)) # generate initial switch state
-	s.append(sample_start_pos(G)) # set the initial start position as the one at G[0][0]
+	s.append(sample_start_pos(G)) # set the initial start position
 	for n in range(num_iter):
 		pass
 	return s, X
@@ -21,7 +21,7 @@ def gibbs(o, G, num_iter, error_prob=0.1):
 	s = [] # store samples for the start positions
 	X = [] # store switch states
 	X.append(sample_switch_states(G.lattice_size)) # generate initial switch state
-	s.append(sample_start_pos(G)) # set the initial start position as the one at G[0][0]
+	s.append(sample_start_pos(G)) # set the initial start position
 	for n in range(num_iter):
 		pass
 	return s, X
@@ -30,7 +30,7 @@ def block_gibbs(o, G, num_iter, error_prob=0.1):
 	s = [] # store samples for the start positions
 	X = [] # store switch states
 	X.append(sample_switch_states(G.lattice_size)) # generate initial switch state
-	s.append(sample_start_pos(G)) # set the initial start position as the one at G[0][0]
+	s.append(sample_start_pos(G)) # set the initial start position
 	for n in range(num_iter):
 		pass
 	return s, X

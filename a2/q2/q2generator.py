@@ -104,7 +104,6 @@ def sample_start_pos(G):
 	s0 = G.get_node(r, c)
 	return s0
 
-# generate graph and switch states
 # returns nxn matrix as list of list
 def sample_switch_states(n):
 	X = []
