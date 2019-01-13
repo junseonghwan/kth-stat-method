@@ -10,7 +10,7 @@ class SVParams:
 def generator(T, sv_params):
 	x = np.zeros(T)
 	y = np.zeros(T)
-	x[0] = np.random.normal(0, np.power(sv_params.sigma, 2))
+	x[0] = np.random.normal(0, sv_params.sigma)
 	y[0] = np.random.normal(0, sv_params.beta * np.sqrt(np.exp(x[0])))
 	for t in range(1, T):
 		x[t] = np.random.normal(sv_params.phi * x[t-1], sv_params.sigma)
